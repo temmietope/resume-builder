@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const LayoutWrapper = styled.div`
-  border: 1px solid;
   height: 100vh;
   width: 100%;
   display: grid;
@@ -9,5 +8,12 @@ export const LayoutWrapper = styled.div`
 `;
 
 export const SidebarWrapper = styled.div`
-  border: 1px solid;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
 `;
+
+export const LayoutChild = styled.div`
+  border: 1px solid
+`

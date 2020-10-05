@@ -1,2 +1,5 @@
 export const HOME = "/"
-export const DASHBOARD = "/resume"
+export const DASHBOARD = "/resume" 
+export const CONTENT = "/content"
+export const DESIGN = "/design"
+export const CHECK = "/check"

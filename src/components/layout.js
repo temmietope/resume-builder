@@ -6,7 +6,9 @@ const Layout = ({ children }) => {
   return (
     <Styles.LayoutWrapper>
       <Sidebar />
-       {children}
+      <Styles.LayoutChild>
+      {children}
+      </Styles.LayoutChild>
     </Styles.LayoutWrapper>
   );
 };
