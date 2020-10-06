@@ -7,6 +7,21 @@ export const DashboardWrapper = styled.div`
   padding-right: 5rem;
   display: grid;
   grid-template-columns: 15% 55% 30%;
+  button {
+    border: 1px solid ${Colors["app-button-color"]};
+    background: none;
+    color: ${Colors["app-button-color"]};
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    font-weight: bold;
+    transition: all 0.5s;
+    :hover {
+      transform: scale(1.05);
+      opacity: 0.85;
+    }
+  }
 `;
 
 export const DashboardDiv = styled.div`
@@ -21,10 +36,10 @@ export const DetailsHeader = styled.header`
 
 export const DetailsBody = styled.div`
   h5 {
-    font-size: 1rem;
+    font-size: 1.3rem;
     padding: 0;
     margin: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
   section {
     box-shadow: 0px 2px 4px #1717172e;
@@ -62,18 +77,19 @@ export const DetailsImageDiv = styled.section`
 `;
 
 export const DetailsBasic = styled.section`
-  input {
+  input,
+  textarea {
     width: 100%;
     outline: none;
     padding: 0.6rem 1rem;
     border-radius: 5px;
     border: 1px solid ${Colors["app-button-color"]};
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   label {
     display: block;
     margin-bottom: 0.5rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 600;
     color: ${Colors["black"]};
   }
@@ -83,7 +99,21 @@ export const DetailsBasic = styled.section`
     .name {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-gap: 1rem;
+      grid-column-gap: 1rem;
+    }
+    .dob {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 1rem;
+    }
+  }
+`;
+
+export const DetailsAdditionalInfo = styled.section`
+  button {
+    margin: 0.5rem;
+    i {
+      margin-right: 0.4rem;
     }
   }
 `;

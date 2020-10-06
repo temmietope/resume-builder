@@ -1,5 +1,6 @@
 import React from "react";
 import * as Styles from "../../styles/dashboardStyle";
+import { additionalInfo } from "./additionalInfo";
 const Details = () => {
   return (
     <>
@@ -46,8 +47,39 @@ const Details = () => {
                 <input type="text" />
               </p>
             </div>
+            <p>
+              <label>Job Title</label>
+              <input type="text" />
+            </p>
+            <p>
+              <label>Date of Birth</label>
+              <div className="dob">
+                <input type="number" placeholder="Day" />
+                <input type="text" placeholder="Month"/>
+                <input type="text" placeholder="Year"/>
+              </div>
+            </p>
+            <p>
+              <label>Objective</label>
+              <textarea rows="5"/>
+            </p>
+            <p>
+              <label>Nationality</label>
+              <input type="text" />
+            </p>
           </div>
         </Styles.DetailsBasic>
+        <Styles.DetailsAdditionalInfo>
+          <h5>Additional Info</h5>
+          {additionalInfo.map((info, index) => {
+            return (
+              <button key={index}>
+                <i className="fas fa-plus" />
+                <span>{info.text}</span>
+              </button>
+            );
+          })}
+        </Styles.DetailsAdditionalInfo>
       </Styles.DetailsBody>
     </>
   );
