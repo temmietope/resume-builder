@@ -7,7 +7,7 @@ const Sidebar = ({ match }) => {
   console.log(match.url);
   return (
     <Styles.SidebarWrapper>
-      <NavLink to={`${match.path}${ROUTES.CONTENT}`} className="navlink" activeClassName="navlink-active">Content</NavLink>
+      <NavLink to={`${match.path}${ROUTES.DETAILS}`} className="navlink" activeClassName="navlink-active">Details</NavLink>
       <NavLink to={`${match.path}${ROUTES.DESIGN}`} className="navlink" activeClassName="navlink-active">Design</NavLink>
       <NavLink to={`${match.path}${ROUTES.CHECK}`} className="navlink" activeClassName="navlink-active">Complete</NavLink>
     </Styles.SidebarWrapper>

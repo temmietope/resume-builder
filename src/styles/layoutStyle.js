@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import * as Colors from "./colors.json";
 
 export const LayoutWrapper = styled.div`
   height: 100vh;

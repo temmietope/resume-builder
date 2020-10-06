@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import * as Colors from "./colors.json";
 
 export const HomeWrapper = styled.div`
   width: 100%;
