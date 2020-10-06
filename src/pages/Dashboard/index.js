@@ -14,7 +14,7 @@ const Dashboard = ({ match }) => {
   const components = {
     content: <Content />,
     design: <Design />,
-    complete: <Complete />,
+    check: <Complete />,
   };
   return (
     <Styles.DashboardWrapper>
