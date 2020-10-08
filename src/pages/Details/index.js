@@ -1,7 +1,18 @@
 import React from "react";
+import { useState } from "react";
 import * as Styles from "../../styles/dashboardStyle";
-import { additionalInfo } from "./additionalInfo";
+import { additionalInfo, links } from "./additionalInfo";
+import InputTag from "./inputTag";
 const Details = () => {
+  const [infoAdded, setInfo] = useState([]);
+
+  const addInfo = (val) => {
+    console.log(val);
+    if (infoAdded.includes(val)) {
+      return;
+    } else setInfo([...infoAdded, val]);
+  };
+
   return (
     <>
       <Styles.DetailsHeader>
@@ -47,37 +58,39 @@ const Details = () => {
                 <input type="text" />
               </p>
             </div>
-            <p>
-              <label>Job Title</label>
-              <input type="text" />
-            </p>
-            <p>
-              <label>Date of Birth</label>
-              <div className="dob">
-                <input type="number" placeholder="Day" />
-                <input type="text" placeholder="Month"/>
-                <input type="text" placeholder="Year"/>
-              </div>
-            </p>
-            <p>
-              <label>Objective</label>
-              <textarea rows="5"/>
-            </p>
-            <p>
-              <label>Nationality</label>
-              <input type="text" />
-            </p>
+            {infoAdded.map((info, index) => {
+              return <InputTag info={info} key={index} />;
+            })}
           </div>
         </Styles.DetailsBasic>
+
+        
         <Styles.DetailsAdditionalInfo>
           <h5>Additional Info</h5>
+          <p>Personal</p>
+
           {additionalInfo.map((info, index) => {
-            return (
-              <button key={index}>
-                <i className="fas fa-plus" />
-                <span>{info.text}</span>
-              </button>
-            );
+            if (infoAdded.includes(info)) {
+              return;
+            } else
+              return (
+                <button key={index} onClick={() => addInfo(info)}>
+                  <i className="fas fa-plus" />
+                  <span>{info.text}</span>
+                </button>
+              );
+          })}
+          <p>Links</p>
+          {links.map((info, index) => {
+            if (infoAdded.includes(info.name)) {
+              return;
+            } else
+              return (
+                <button key={index} onClick={() => addInfo(info)}>
+                  <i className="fas fa-plus" />
+                  <span>{info.text}</span>
+                </button>
+              );
           })}
         </Styles.DetailsAdditionalInfo>
       </Styles.DetailsBody>
