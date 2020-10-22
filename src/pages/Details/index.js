@@ -15,7 +15,7 @@ const Details = () => {
   });
   const inputContext = useContext(resumeContext);
   const { userInput, updateUserInput } = inputContext;
-  console.log(userInput);
+  // console.log(userInput);
 
   const [infoAdded, setInfo] = useState([]);
 
@@ -26,7 +26,6 @@ const Details = () => {
   };
 
   const onChange = (e) => {
-    // setInfo([...])
     setInitialInfo({ ...initialInfo, [e.target.name]: e.target.value });
     updateUserInput(e.target.name, e.target.value);
   };

@@ -13,6 +13,17 @@ const ResumeState = (props) => {
       address: "",
       state: "",
       country: "",
+      jobTitle: "",
+      dob: "",
+      objective: "",
+      nationality: "",
+      linkedin: "",
+      github: "",
+      twitter: "",
+      facebook: "",
+      stack: "",
+      dev: "",
+      medium: "",
     },
   };
   const [state, dispatch] = useReducer(resumeReducer, initialState);

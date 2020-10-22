@@ -118,6 +118,23 @@ export const DetailsAdditionalInfo = styled.section`
   }
 `;
 
-export const Overview = styled.div`
+export const OverviewWrapper = styled.div`
   border: 1px solid;
+  padding: 1rem;
 `;
+
+export const Overview = styled.div`
+  box-shadow: 0px 2px 4px #1717172e;
+  border-radius: 5px;
+  height:  100%;
+  padding: 1rem;
+`;
+
+export const Biodata = styled.div`
+  text-align: center;
+  color: ${Colors['black']};
+  p{
+    padding: 0;
+    margin: 0;
+  }
+`
