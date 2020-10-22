@@ -1,18 +1,37 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import resumeContext from "../../context/resumeContext";
 import * as Styles from "../../styles/dashboardStyle";
 import { additionalInfo, links } from "./additionalInfo";
 import InputTag from "./inputTag";
 const Details = () => {
+  const [initialInfo, setInitialInfo] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    state: "",
+    country: "",
+  });
+  const inputContext = useContext(resumeContext);
+  const { userInput, updateUserInput } = inputContext;
+  console.log(userInput);
+
   const [infoAdded, setInfo] = useState([]);
 
   const addInfo = (val) => {
-    console.log(val);
     if (infoAdded.includes(val)) {
       return;
     } else setInfo([...infoAdded, val]);
   };
 
+  const onChange = (e) => {
+    // setInfo([...])
+    setInitialInfo({ ...initialInfo, [e.target.name]: e.target.value });
+    updateUserInput(e.target.name, e.target.value);
+  };
+
+  const { name, email, phone, address, state, country } = initialInfo;
   return (
     <>
       <Styles.DetailsHeader>
@@ -32,39 +51,63 @@ const Details = () => {
           <div className="basic__info">
             <p>
               <label>Full Name</label>
-              <input type="text" />
+              <input type="text" name="name" value={name} onChange={onChange} />
             </p>
             <div className="name">
               <p>
                 <label>Email</label>
-                <input type="email" />
+                <input
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={onChange}
+                />
               </p>
               <p>
                 <label>Phone</label>
-                <input type="text" />
+                <input
+                  type="text"
+                  name="phone"
+                  value={phone}
+                  onChange={onChange}
+                />
               </p>
             </div>
             <p>
               <label>Address</label>
-              <input type="text" />
+              <input
+                type="text"
+                name="address"
+                value={address}
+                onChange={onChange}
+              />
             </p>
             <div className="name">
               <p>
                 <label>State</label>
-                <input type="text" />
+                <input
+                  type="text"
+                  name="state"
+                  value={state}
+                  onChange={onChange}
+                />
               </p>
               <p>
                 <label>Country</label>
-                <input type="text" />
+                <input
+                  type="text"
+                  name="country"
+                  value={country}
+                  onChange={onChange}
+                />
               </p>
             </div>
             {infoAdded.map((info, index) => {
-              return <InputTag info={info} key={index} />;
+              return <InputTag info={info} key={index} onChange={onChange} />;
             })}
           </div>
         </Styles.DetailsBasic>
 
-        
         <Styles.DetailsAdditionalInfo>
           <h5>Additional Info</h5>
           <p>Personal</p>

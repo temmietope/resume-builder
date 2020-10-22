@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
+import ResumeState from "./context/ResumeState";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ResumeState>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ResumeState>
   </React.StrictMode>,
   document.getElementById("root")
 );
