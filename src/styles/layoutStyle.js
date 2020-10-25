@@ -1,12 +1,12 @@
-import styled from "styled-components";
-import * as Colors from "./colors.json";
+import styled from 'styled-components'
+import * as Colors from './colors.json'
 
 export const LayoutWrapper = styled.div`
   height: 100vh;
   width: 100%;
   display: grid;
   grid-template-columns: 15% 85%;
-`;
+`
 
 export const SidebarWrapper = styled.div`
   display: flex;
@@ -16,6 +16,10 @@ export const SidebarWrapper = styled.div`
   border: 1px solid;
   padding: 5rem 0 5rem 0;
   box-sizing: border-box;
+  position: fixed;
+  height: 100vh;
+  /* width: 10rem; */
+  width: 15%;
   .navlink {
     text-decoration: none;
     color: #333;
@@ -32,8 +36,8 @@ export const SidebarWrapper = styled.div`
     background: #d9b9ea;
     color: white;
   }
-`;
+`
 
 export const LayoutChild = styled.div`
   border: 1px solid;
-`;
+`
